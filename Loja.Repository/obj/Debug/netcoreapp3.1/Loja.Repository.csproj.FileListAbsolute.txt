@@ -1,0 +1,7 @@
+C:\Projetos\Loja\Loja.Repository\bin\Debug\netcoreapp3.1\Loja.Repository.deps.json
+C:\Projetos\Loja\Loja.Repository\bin\Debug\netcoreapp3.1\Loja.Repository.dll
+C:\Projetos\Loja\Loja.Repository\bin\Debug\netcoreapp3.1\Loja.Repository.pdb
+C:\Projetos\Loja\Loja.Repository\obj\Debug\netcoreapp3.1\Loja.Repository.AssemblyInfoInputs.cache
+C:\Projetos\Loja\Loja.Repository\obj\Debug\netcoreapp3.1\Loja.Repository.AssemblyInfo.cs
+C:\Projetos\Loja\Loja.Repository\obj\Debug\netcoreapp3.1\Loja.Repository.dll
+C:\Projetos\Loja\Loja.Repository\obj\Debug\netcoreapp3.1\Loja.Repository.pdb
