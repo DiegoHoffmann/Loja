@@ -38,6 +38,7 @@ namespace Loja
                 sp.GetRequiredService<IOptions<LojaDatabaseSettings>>().Value);
 
             services.AddSingleton<ProdutoService>();
+            services.AddSingleton<ProdutoRepository>();
             services.AddAutoMapper(typeof(Startup));
 
             services.AddControllers();

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using AutoMapper;
 using Loja.Models.DTO;
+using Loja.Models.Entity;
 using Loja.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,13 +21,27 @@ namespace Loja.Controllers
         }
         // GET: /<controller>/
         [HttpGet("lista-produto")]
-        public ProdutoDTO ListarProdutos()
+        public List<ProdutoDTO> ListarProdutos()
         {
-            var produto = ProdutoService.Get().FirstOrDefault();
+            var produto = ProdutoService.getListaProduto();
 
-            var prod = Imapper.Map<ProdutoDTO>(produto);
+            List<ProdutoDTO> lstProd = Imapper.Map<List<ProdutoDTO>>(produto);
            
-            return prod;
+            return lstProd;
         }
+
+        [HttpPost("inserir-produto")]
+        public bool InserirProduto(Produto produto)
+        {
+            return ProdutoService.InsertProduto(produto);
+        }
+
+        [HttpPut("alterar-produto")]
+        public bool AlterarProduto(string id, Produto produto)
+        { 
+            ProdutoService.AlterarProduto(produto);
+            return true;
+        }
+
     }
 }

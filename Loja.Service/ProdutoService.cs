@@ -9,17 +9,36 @@ namespace Loja.Service
 {
     public class ProdutoService
     {
-        private readonly IMongoCollection<Produto> _produtos;
+        private ProdutoRepository produtoRepository;
 
-        public ProdutoService(ILojaDatabaseSettings settings)
+        public ProdutoService(ProdutoRepository repository)
         {
-            var client = new MongoClient(settings.ConnectionString);
-            var database = client.GetDatabase(settings.DatabaseName);
-
-            _produtos = database.GetCollection<Produto>(settings.LojaCollectionName);
+            produtoRepository = repository;
         }
 
-        public List<Produto> Get() =>
-            _produtos.Find(produto => produto.Id == 1).ToList();
+        public List<Produto> getListaProduto()
+        {
+            var listaProduto = produtoRepository.Get();
+
+            return listaProduto;
+        }
+
+        public List<Produto> getProduto()
+        {
+            var listaProduto = produtoRepository.Get();
+
+            return listaProduto;
+        }
+
+        public bool InsertProduto(Produto produto)
+        {
+            return produtoRepository.InsertProduto(produto);
+        }
+
+        public bool AlterarProduto(Produto produto)
+        {
+            return produtoRepository.AlterarProduto(produto);
+        }
+
     }
 }
