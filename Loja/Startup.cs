@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Loja.Models.DTO;
 using Loja.Models.Entity;
 using Loja.Repository;
@@ -37,13 +38,7 @@ namespace Loja
                 sp.GetRequiredService<IOptions<LojaDatabaseSettings>>().Value);
 
             services.AddSingleton<ProdutoService>();
-            //services.AddAutoMapper();
-            //var config = new AutoMapper.MapperConfiguration(cfg =>
-            //{
-            //    cfg.CreateMap<ProdutoDTO, Produto>();
-            //});
-            //IMapper mapper = config.CreateMapper();
-            //services.AddSingleton(mapper);
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddControllers();
             services.AddSwaggerGen(c => {
